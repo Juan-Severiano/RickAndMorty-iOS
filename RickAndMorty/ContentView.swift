@@ -1,0 +1,24 @@
+//
+//  ContentView.swift
+//  RickAndMorty
+//
+//  Created by iredefbmac_21 on 26/05/25.
+//
+
+import SwiftUI
+
+struct ContentView: View {
+    var body: some View {
+        VStack {
+            Image(systemName: "globe")
+                .imageScale(.large)
+                .foregroundStyle(.tint)
+            Text("Hello, world!")
+        }
+        .padding()
+    }
+}
+
+#Preview {
+    ContentView()
+}
