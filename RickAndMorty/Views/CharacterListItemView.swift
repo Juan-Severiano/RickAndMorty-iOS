@@ -14,40 +14,39 @@ struct CharacterListItemView: View {
     
     var body: some View {
         HStack() {
-                AsyncImage(url: character.image) { image in
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 80, height: 80)
-                        .clipShape(Circle())
-                        .overlay(Circle().stroke(character.status == .alive ? .green : .red, lineWidth: 3))
-                } placeholder: {
-                    ProgressView()
-                        .frame(width: 80, height: 80)
+            AsyncImage(url: character.image) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 80, height: 80)
+                    .clipShape(Circle())
+                    .overlay(Circle().stroke(character.status == .alive ? .green : .red, lineWidth: 3))
+            } placeholder: {
+                ProgressView()
+                    .frame(width: 80, height: 80)
+            }
+            VStack(alignment: .leading) {
+                Text(character.name)
+                    .font(.title)
+                    .fontWeight(.bold)
+                
+                
+                HStack {
+                    Image(systemName: "circle.fill")
+                        .foregroundColor(character.status == .alive ? .green : .red)
+                    Text("\(character.species) - \(character.status.rawValue)")
+                    .font(.callout)                    }
+                HStack {
+                    Image(systemName: "mappin.and.ellipse")
+                        .foregroundColor(.red)
+                    
+                    Text(character.origin.name)
+                        .font(.callout)
                 }
-                VStack(alignment: .leading) {
-                    Text(character.name)
-                        .font(.title)
-                        .fontWeight(.bold)
-                    
-                    
-                    HStack {
-                        Image(systemName: "circle.fill")
-                            .foregroundColor(character.status == .alive ? .green : .red)
-                        Text("\(character.species) - \(character.status.rawValue)")
-                            .font(.callout)                    }
-                    HStack {
-                        Image(systemName: "mappin.and.ellipse")
-                            .foregroundColor(.red)
-                        
-                        Text(character.origin.name)
-                            .font(.callout)
-                    }
-                    
-                }
-                Spacer()
+                
+            }
+            Spacer()
         }
-        .padding()
     }
 }
 
