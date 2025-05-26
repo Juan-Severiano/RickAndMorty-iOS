@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  RickAndMorty
 //
-//  Created by iredefbmac_21 on 26/05/25.
+//  Created by juansev on 26/05/25.
 //
 
 import SwiftUI
