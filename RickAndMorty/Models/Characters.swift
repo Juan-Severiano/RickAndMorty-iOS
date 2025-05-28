@@ -10,6 +10,7 @@ import Foundation
 enum Status: String, Codable {
     case alive = "Alive"
     case dead = "Dead"
+    case unknown = "Unknown"
 }
 
 struct OriginInCharacter: Codable {

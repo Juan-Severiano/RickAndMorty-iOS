@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CharacterListItemView: View {
+struct CharacterListItemView2: View {
     @State var character: Character
     
     // var roundedColor: Color = character.status == .alive ? .green : .red
@@ -23,7 +23,7 @@ struct CharacterListItemView: View {
                     .overlay(Circle().stroke(character.status == .alive ? .green : .red, lineWidth: 3))
             } placeholder: {
                 ProgressView()
-                    .frame(width: 80, height: 80)
+                    .frame(width: 40, height: 40)
             }
             VStack(alignment: .leading) {
                 Text(character.name)
@@ -51,7 +51,7 @@ struct CharacterListItemView: View {
 }
 
 #Preview {
-    CharacterListItemView(
+    CharacterListItemView2(
         character: Character(
             id: 1,
             name: "Rick Sanchez",
